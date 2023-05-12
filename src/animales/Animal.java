@@ -4,13 +4,26 @@ import java.time.DateTimeException;
 import java.time.LocalDate;
 import java.util.Objects;
 
+/**
+ * Clase animal
+ * @author karin
+ */
 public class Animal {
 
     protected String codigo;
     private LocalDate fechaNacimiento;
     private char sexo;
     private double peso;
-
+    
+    
+    /**
+     * Constructor de la clase animal
+     * @param codigo codigo identificador del animal
+     * @param fechaNacimiento parametro de la fecha de nacimiento
+     * @param sexo caracter que indica el sexo del animal
+     * @param peso parametro de peso 
+     * @throws IllegalArgumentException 
+     */
     public Animal(String codigo, String fechaNacimiento, char sexo, double peso) throws IllegalArgumentException {
 
         if (esCodigoValido(codigo) && (esSexoValido(sexo)) && (peso > 0)) {
@@ -22,7 +35,9 @@ public class Animal {
             throw new IllegalArgumentException();
         }
     }
-
+    
+    
+    
     public Animal(Animal otroAnimal) {
         this.codigo = otroAnimal.codigo;
         this.fechaNacimiento = otroAnimal.fechaNacimiento;
